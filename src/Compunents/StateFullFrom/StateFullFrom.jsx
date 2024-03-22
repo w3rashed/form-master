@@ -31,8 +31,9 @@ const StateFullFrom = () => {
     setPassword(e.target.value);
   };
   return (
-    <div>
+    <div className="flex text-center">
       <form onSubmit={handleSubmit} className="">
+        <p className="text-green-500">State Full Form</p>
         <input
           required
           onChange={handleNameChange}

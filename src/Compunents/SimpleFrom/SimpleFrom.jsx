@@ -12,6 +12,7 @@ const SimpleFrom = () => {
   return (
     <div className="flex text-center">
       <form onSubmit={handleSubmit} className="">
+        <p className="text-green-500">Simpla Form</p>
         <input
           type="text"
           name="name"

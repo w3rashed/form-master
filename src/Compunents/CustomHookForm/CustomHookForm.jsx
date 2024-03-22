@@ -1,26 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import useInputState from "../../Hooks/useInputState";
 
-const RefForm = () => {
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+const CustomHookForm = () => {
+  const [name, handleNameChange] = useInputState("rashed");
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(nameRef.current.value);
-    console.log(emailRef.current.value);
-    console.log(passwordRef.current.value);
+    console.log("from data", name);
   };
-  useEffect(() => {
-    nameRef.current.focus();
-  }, []);
-
   return (
     <div className="flex text-center">
       <form onSubmit={handleSubmit} className="">
-        <p className="text-green-500">Ref Form</p>
+        <p className="text-green-500">Custom hook Form</p>
         <input
-          ref={nameRef}
+          onChange={handleNameChange}
+          value={name}
           type="text"
           name="name"
           placeholder="Type here"
@@ -28,16 +21,14 @@ const RefForm = () => {
         />
         <br></br>
         <input
-          ref={emailRef}
           type="email"
           name="email"
           placeholder="Type here"
           className="input input-bordered input-accent w-full max-w-xs mt-3"
         />
         <input
-          ref={passwordRef}
-          type="password"
-          name="password"
+          type="number"
+          name="number"
           placeholder="Type here"
           className="input input-bordered input-accent w-full max-w-xs mt-3"
         />
@@ -48,4 +39,4 @@ const RefForm = () => {
   );
 };
 
-export default RefForm;
+export default CustomHookForm;
