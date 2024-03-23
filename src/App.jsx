@@ -1,9 +1,9 @@
 import "./App.css";
-// import CustomHookForm from "./Compunents/CustomHookForm/CustomHookForm";
-// import RefForm from "./Compunents/RefForm/RefForm";
-// import SimpleFrom from "./Compunents/SimpleFrom/SimpleFrom";
-// import StateFullFrom from "./Compunents/StateFullFrom/StateFullFrom";
+import CustomHookForm from "./Compunents/CustomHookForm/CustomHookForm";
+import RefForm from "./Compunents/RefForm/RefForm";
 import ReuseableForm from "./Compunents/ReuseableForm/ReuseableForm";
+import SimpleFrom from "./Compunents/SimpleFrom/SimpleFrom";
+import StateFullFrom from "./Compunents/StateFullFrom/StateFullFrom";
 
 function App() {
   const handleSignUpSubmit = (data) => {
@@ -16,10 +16,10 @@ function App() {
     <>
       <div className="container mx-auto grid justify-center">
         <h1 className="text-5xl mb-5">From Master</h1>
-        {/* <SimpleFrom></SimpleFrom> */}
-        {/* <StateFullFrom></StateFullFrom> */}
-        {/* <RefForm></RefForm> */}
-        {/* <CustomHookForm></CustomHookForm> */}
+        <SimpleFrom></SimpleFrom>
+        <StateFullFrom></StateFullFrom>
+        <RefForm></RefForm>
+        <CustomHookForm></CustomHookForm>
         <ReuseableForm handleSubmit={handleSignUpSubmit} fromTitle={"Sign Up"}>
           <div>
             <h2>sign up</h2>
